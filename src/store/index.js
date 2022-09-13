@@ -1,5 +1,5 @@
-import { configureStore } from '@reduxjs/toolkit';
-import createSagaMiddleWare from 'redux-saga';
+import { configureStore } from "@reduxjs/toolkit";
+import createSagaMiddleWare from "redux-saga";
 // import saga from './sagas';
 
 // Setting up Saga as Middleware

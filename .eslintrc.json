@@ -30,6 +30,7 @@
     "react-native/no-color-literals": 2, // enforces variable names to be used for storing colors
     "no-nested-ternary": "off",
     "no-restricted-globals": "off",
-    "import/no-cycle": "off"
+    "import/no-cycle": "off",
+    "react/no-unescaped-entities": "off"
   }
 }
