@@ -7,6 +7,7 @@ import {
   Image,
   KeyboardAvoidingView,
   ScrollView,
+  Pressable,
 } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -32,7 +33,9 @@ function SignUpScreen({ navigation }) {
               className="w-11/12 h-1/4 self-center m-10"
               resizeMode="contain"
             />
-
+            <Text className="font-displayBold text-2xl text-black m-3 text-center ">
+              Get started with Next
+            </Text>
             <Input
               label="Name"
               onChangeText={setName}
@@ -54,6 +57,14 @@ function SignUpScreen({ navigation }) {
               // ref={passRef}
               // onSubmitEditing={() => console.log("p", passRef)}
             />
+            <Pressable
+              className="self-start"
+              onPress={() => navigation.navigate(ScreenNames.OTPLOGINSCREEN)}
+            >
+              <Text className="m-2 mt-4  ml-8 text-base font-displayMedium ">
+                SignUp using OTP ?
+              </Text>
+            </Pressable>
           </View>
           <View className="m-4">
             <Button
@@ -61,14 +72,14 @@ function SignUpScreen({ navigation }) {
               onPress={() => navigation.navigate(ScreenNames.HOME)}
               externalButtonStyle="m-0"
             />
-            <Text className="self-center m-5 font-displayBold">or</Text>
+            {/* <Text className="self-center m-5 font-displayBold">or</Text>
             <Button
               title="Signup with google"
               onPress={() => navigation.navigate(ScreenNames.HOME)}
               externalButtonStyle="m-0"
               color="#4285F4"
               image={require("../../../assets/images/google.png")}
-            />
+            /> */}
           </View>
         </KeyboardAvoidingView>
       </SafeAreaView>

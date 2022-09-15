@@ -17,12 +17,7 @@ function TopMenu({ onBack, title, actionTitle, onAction }) {
   return (
     <View className={classNames.profileTopMenuContainer}>
       <TouchableOpacity onPress={onBack}>
-        <MaterialIcons
-          className={classNames.arrowLeftGreenIcon}
-          name="keyboard-arrow-left"
-          size={30}
-          color="black"
-        />
+        <MaterialIcons name="keyboard-arrow-left" size={30} color="black" />
       </TouchableOpacity>
       <Text className={classNames.profileTopMenuTitle}>{title}</Text>
       <Text className={classNames.profileTopMenuActionTitle} onPress={onAction}>

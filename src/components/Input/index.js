@@ -17,6 +17,7 @@ function Input({
   onSubmitEditing,
   externalInputStyle,
   externalLabelFocusedStyle,
+  externalInputFieldStyle,
 }) {
   // initializing state using useState Hook
   const [focused, setFocus] = useState(false);
@@ -29,6 +30,7 @@ function Input({
         ? `relative top-6 left-4 z-10 text-sm ${externalLabelFocusedStyle}`
         : "",
     inputField: `bg-white border-2 border-white shadow-xl self-center rounded-xl max-w-[90%] min-w-[90%] py-4 px-4 z-0 
+        ${externalInputFieldStyle}
         ${focused || value ? "py-5" : ""}
       `,
   };
@@ -37,6 +39,7 @@ function Input({
       <Text className={classNames.inputLabelFocused}>
         {focused || value ? label || placeholder : ""}
       </Text>
+
       <TextInput
         keyboardType={keyboardType}
         secureTextEntry={secureTextEntry}

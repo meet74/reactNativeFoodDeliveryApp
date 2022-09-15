@@ -22,7 +22,7 @@ function Button({
   const classNames = {
     container: `
     ${color ? `bg-[${color}]` : "bg-primary"} 
-    w-11/12  self-center my-3 rounded-xl items-center
+    w-11/12  self-center my-2 rounded-xl items-center
    ${!image && "justify-center  py-4"} flex-row  
    ${type === "inverted" ? "bg-gray-200" : ""}
     ${type === "outline" ? "bg-gray-200 border-black border-1" : ""}

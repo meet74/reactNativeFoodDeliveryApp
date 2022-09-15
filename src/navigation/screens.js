@@ -5,6 +5,8 @@ import Initialpage from "../screens/auth/Initialpage";
 import LoginScreen from "../screens/auth/Login";
 import SignUpScreen from "../screens/auth/Signup";
 import ForgotPasswordScreen from "../screens/auth/Forgot-password";
+import OTPLoginScreen from "../screens/auth/OTPLogin";
+import OTPVerificationScreen from "../screens/auth/OTPLogin/OTPVerificationScreen";
 import HomeScreen from "../screens/core/Home";
 
 // Home screens
@@ -20,6 +22,8 @@ const ScreenNames = {
   LOGIN: "LOGIN",
   SIGNUP: "SIGNUP",
   FORGOTPASSWORD: "FORGOTPASSWORD",
+  OTPLOGINSCREEN: "OTPLOGINSCREEN",
+  OTPVERIFICATIONSCREEN: "OTPVERIFICATIONSCREEN",
   ...HomeScreens,
 };
 
@@ -30,4 +34,6 @@ export {
   SignUpScreen,
   ForgotPasswordScreen,
   HomeScreen,
+  OTPLoginScreen,
+  OTPVerificationScreen,
 };

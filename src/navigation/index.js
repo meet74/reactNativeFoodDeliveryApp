@@ -11,6 +11,8 @@ import {
   SignUpScreen,
   ForgotPasswordScreen,
   HomeScreen,
+  OTPLoginScreen,
+  OTPVerificationScreen,
 } from "./screens";
 
 // Intitializing of Navigators
@@ -34,6 +36,14 @@ function AuthNavigation() {
       <AuthNavigator.Screen
         name={ScreenNames.FORGOTPASSWORD}
         component={ForgotPasswordScreen}
+      />
+      <AuthNavigator.Screen
+        name={ScreenNames.OTPLOGINSCREEN}
+        component={OTPLoginScreen}
+      />
+      <AuthNavigator.Screen
+        name={ScreenNames.OTPVERIFICATIONSCREEN}
+        component={OTPVerificationScreen}
       />
     </AuthNavigator.Navigator>
   );
