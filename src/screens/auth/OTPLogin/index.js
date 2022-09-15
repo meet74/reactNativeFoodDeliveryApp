@@ -10,7 +10,7 @@ import React, { useState } from "react";
 import TopMenu from "../../../components/TopMenu";
 import Button from "../../../components/Button";
 import Input from "../../../components/Input";
-import { ScreenNames } from "../../../navigation/screens";
+import { OTPVERIFICATIONSCREEN } from "../../../navigation/componentsAndNames";
 
 function OTPLoginScreen({ navigation }) {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -42,9 +42,7 @@ function OTPLoginScreen({ navigation }) {
             />
             <Button
               title="Sign Up"
-              onPress={() =>
-                navigation.navigate(ScreenNames.OTPVERIFICATIONSCREEN)
-              }
+              onPress={() => navigation.navigate(OTPVERIFICATIONSCREEN.name)}
             />
           </View>
         </KeyboardAvoidingView>

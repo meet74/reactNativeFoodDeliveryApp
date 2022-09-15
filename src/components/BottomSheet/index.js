@@ -3,7 +3,7 @@
 import React from "react";
 import { Text, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
 import BottomSheet from "react-native-raw-bottom-sheet";
-import AntDesign from "react-native-vector-icons/AntDesign";
+import Entypo from "react-native-vector-icons/Entypo";
 
 import Button from "../Button";
 
@@ -35,9 +35,8 @@ function Sheet(props) {
   };
 
   const className = {
-    container: "grow m-10",
-    icon: "self-end absolute top-10 right-15",
-    titleText: "text-black text-xl m-10",
+    container: "grow m-5",
+    titleText: "text-black text-xl ",
     extraButtonStyle:
       "items-center self-center justify-center flex-1 mb-10 mt-5 bg-gray",
   };
@@ -55,8 +54,8 @@ function Sheet(props) {
     >
       <ScrollView className={className.container} scrollEnabled>
         <TouchableOpacity onPress={() => submitHandler()}>
-          <AntDesign
-            name="closecircle"
+          <Entypo
+            name="cross"
             size={24}
             color="gray"
             style={internalStyle.icon}

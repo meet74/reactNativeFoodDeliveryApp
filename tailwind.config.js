@@ -1,6 +1,8 @@
 // @type {import('tailwindcss').Config} */
 // @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 const nativewind = require("nativewind/tailwind/native");
+const { COLORS } = require("./src/theme/colors");
+const { FONTS } = require("./src/theme/typography");
 
 module.exports = {
   mode: "jit",
@@ -13,16 +15,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "#FFF8EE",
-        primary: "#EEA734",
-        secondary: "#EEA374",
-        google: "#4285F4",
+        background: COLORS.background,
+        primary: COLORS.primary,
+        secondary: COLORS.secondary,
+        google: COLORS.google,
       },
       fontFamily: {
-        display: ["Inter-Regular", "sans-serif"],
-        displayBold: ["Inter-Bold", "sans-serif"],
-        displayMedium: ["Inter-Medium", "sans-serif"],
-        displayThin: ["Inter-Thin", "sans-serif"],
+        display: FONTS.display,
+        displayBold: FONTS.displayBold,
+        displayMedium: FONTS.displayMedium,
+        displayThin: FONTS.displayThin,
       },
     },
   },

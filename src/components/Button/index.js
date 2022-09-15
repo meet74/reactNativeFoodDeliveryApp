@@ -11,6 +11,7 @@ function Button({
   onPress,
   color,
   image,
+  icon,
   externalButtonStyle,
   externalTextstyle,
 }) {
@@ -25,12 +26,12 @@ function Button({
     w-11/12  self-center my-2 rounded-xl items-center
    ${!image && "justify-center  py-4"} flex-row  
    ${type === "inverted" ? "bg-gray-200" : ""}
-    ${type === "outline" ? "bg-gray-200 border-black border-1" : ""}
+    ${type === "outline" ? "bg-white border-primary border-[1.5px]" : ""}
     ${externalButtonStyle}`,
 
     defaultButtonText: `text-xl text-white leading-relaxed font-displayMedium 
     ${type === "inverted" ? "text-black" : ""}
-    ${type === "outline" ? "text-black" : ""}
+    ${type === "outline" ? "text-primary" : ""}
     ${externalTextstyle}`,
 
     defaultButtonBG: `  ${image ? "ml-[10px]" : ""}
@@ -38,7 +39,7 @@ function Button({
   };
 
   return (
-    <View className={classNames.container}>
+    <TouchableOpacity className={classNames.container} onPress={onPress}>
       {image && (
         <Image
           source={image}
@@ -46,13 +47,11 @@ function Button({
           resizeMode="contain"
         />
       )}
-      <TouchableOpacity
-        className={classNames.defaultButtonBG}
-        onPress={onPress}
-      >
+      {icon && <View className="mx-5 ml-[-10px]">{icon}</View>}
+      <View className={classNames.defaultButtonBG}>
         <Text className={classNames.defaultButtonText}>{title}</Text>
-      </TouchableOpacity>
-    </View>
+      </View>
+    </TouchableOpacity>
   );
 }
 

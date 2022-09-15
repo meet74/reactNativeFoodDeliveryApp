@@ -8,7 +8,7 @@ import {
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Button from "../../../components/Button";
-import { ScreenNames } from "../../../navigation/screens";
+import { LOGIN, SIGNUP } from "../../../navigation/componentsAndNames";
 
 function InitialPage({ navigation }) {
   return (
@@ -32,11 +32,11 @@ function InitialPage({ navigation }) {
           <View className="m-4">
             <Button
               title="Login"
-              onPress={() => navigation.navigate(ScreenNames.LOGIN)}
+              onPress={() => navigation.navigate(LOGIN.name)}
             />
             <Button
               title="Signup"
-              onPress={() => navigation.navigate(ScreenNames.SIGNUP)}
+              onPress={() => navigation.navigate(SIGNUP.name)}
             />
           </View>
         </KeyboardAvoidingView>

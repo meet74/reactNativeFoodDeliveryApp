@@ -6,8 +6,8 @@ import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Button from "../../../components/Button";
 import Input from "../../../components/Input";
-import { ScreenNames } from "../../../navigation/screens";
 import TopMenu from "../../../components/TopMenu";
+import { AUTH } from "../../../navigation/componentsAndNames";
 
 function ForgotPasswordScreen({ navigation }) {
   // initializing state using useState Hook
@@ -32,7 +32,7 @@ function ForgotPasswordScreen({ navigation }) {
         />
         <Button
           title="Reset Password"
-          onPress={() => navigation.navigate(ScreenNames.AUTH)}
+          onPress={() => navigation.navigate(AUTH.name)}
         />
       </View>
     </SafeAreaView>

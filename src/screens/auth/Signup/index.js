@@ -13,8 +13,9 @@ import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Button from "../../../components/Button";
 import Input from "../../../components/Input";
-import { ScreenNames } from "../../../navigation/screens";
+
 import TopMenu from "../../../components/TopMenu";
+import { HOME, OTPLOGINSCREEN } from "../../../navigation/componentsAndNames";
 
 function SignUpScreen({ navigation }) {
   // initializing state using useState Hook
@@ -59,7 +60,7 @@ function SignUpScreen({ navigation }) {
             />
             <Pressable
               className="self-start"
-              onPress={() => navigation.navigate(ScreenNames.OTPLOGINSCREEN)}
+              onPress={() => navigation.navigate(OTPLOGINSCREEN.name)}
             >
               <Text className="m-2 mt-4  ml-8 text-base font-displayMedium ">
                 SignUp using OTP ?
@@ -69,13 +70,13 @@ function SignUpScreen({ navigation }) {
           <View className="m-4">
             <Button
               title="Signup"
-              onPress={() => navigation.navigate(ScreenNames.HOME)}
+              onPress={() => navigation.navigate(HOME.name)}
               externalButtonStyle="m-0"
             />
             {/* <Text className="self-center m-5 font-displayBold">or</Text>
             <Button
               title="Signup with google"
-              onPress={() => navigation.navigate(ScreenNames.HOME)}
+              onPress={() => navigation.navigate(HOME.name)}
               externalButtonStyle="m-0"
               color="#4285F4"
               image={require("../../../assets/images/google.png")}

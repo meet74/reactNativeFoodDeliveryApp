@@ -13,8 +13,12 @@ import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Button from "../../../components/Button";
 import Input from "../../../components/Input";
-import { ScreenNames } from "../../../navigation/screens";
 import TopMenu from "../../../components/TopMenu";
+import {
+  FORGOTPASSWORD,
+  HOME,
+  SIGNUP,
+} from "../../../navigation/componentsAndNames";
 
 function LoginScreen({ navigation }) {
   // initializing refs using useRef Hook
@@ -56,7 +60,7 @@ function LoginScreen({ navigation }) {
             />
             <Pressable
               className="self-end"
-              onPress={() => navigation.navigate(ScreenNames.FORGOTPASSWORD)}
+              onPress={() => navigation.navigate(FORGOTPASSWORD.name)}
             >
               <Text className="m-2  mr-7 text-base font-displayMedium ">
                 Forgot password ?
@@ -66,12 +70,12 @@ function LoginScreen({ navigation }) {
           <View>
             <Button
               title="Login"
-              onPress={() => navigation.navigate(ScreenNames.HOME)}
+              onPress={() => navigation.navigate(HOME.name)}
               externalButtonStyle="m-0"
             />
             <Pressable
               className="self-end"
-              onPress={() => navigation.navigate(ScreenNames.SIGNUP)}
+              onPress={() => navigation.navigate(SIGNUP.name)}
             >
               <Text className="m-5 mr-7 text-base font-displayMedium ">
                 Don't have an account ? Create one

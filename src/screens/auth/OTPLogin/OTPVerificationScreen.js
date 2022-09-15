@@ -10,7 +10,7 @@ import React, { useState } from "react";
 import TopMenu from "../../../components/TopMenu";
 import Button from "../../../components/Button";
 import Input from "../../../components/Input";
-import { ScreenNames } from "../../../navigation/screens";
+import { HOME } from "../../../navigation/componentsAndNames";
 
 function OTPVerificationScreen({ navigation }) {
   const [OTP, setOTP] = useState("");
@@ -41,7 +41,7 @@ function OTPVerificationScreen({ navigation }) {
               />
               <Button
                 title="Verify"
-                onPress={() => navigation.navigate(ScreenNames.HOME)}
+                onPress={() => navigation.navigate(HOME.name)}
               />
               <Text className="font-display text-base m-6 text-center text-black ">
                 Did'nt receive code ?{" "}
