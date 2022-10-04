@@ -4,11 +4,14 @@ import {
   Image,
   ScrollView,
   KeyboardAvoidingView,
-} from "react-native";
-import React from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
-import Button from "../../../components/Button";
-import { LOGIN, SIGNUP } from "../../../navigation/componentsAndNames";
+} from 'react-native';
+import React from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import Button from '../../../components/Button';
+import {
+  LOGINSCREEN,
+  SIGNUPSCREEN,
+} from '../../../navigation/componentsAndNames';
 
 function InitialPage({ navigation }) {
   return (
@@ -17,7 +20,7 @@ function InitialPage({ navigation }) {
         <KeyboardAvoidingView>
           <View style={{}} className="items-center justify-center flex-1">
             <Image
-              source={require("../../../assets/images/illustrations-1.png")}
+              source={require('../../../assets/images/illustrations-1.png')}
               className="w-11/12 h-1/2 self-center m-10"
               resizeMode="contain"
             />
@@ -32,11 +35,11 @@ function InitialPage({ navigation }) {
           <View className="m-4">
             <Button
               title="Login"
-              onPress={() => navigation.navigate(LOGIN.name)}
+              onPress={() => navigation.navigate(LOGINSCREEN.name)}
             />
             <Button
               title="Signup"
-              onPress={() => navigation.navigate(SIGNUP.name)}
+              onPress={() => navigation.navigate(SIGNUPSCREEN.name)}
             />
           </View>
         </KeyboardAvoidingView>

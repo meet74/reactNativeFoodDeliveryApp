@@ -1,12 +1,12 @@
 // Custom Button Component
 
 // All imports
-import React from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import React from 'react';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
 
 function Button({
-  type = "default",
-  title = "",
+  type = 'default',
+  title = '',
   // size = "75",
   onPress,
   color,
@@ -14,32 +14,37 @@ function Button({
   icon,
   externalButtonStyle,
   externalTextstyle,
+  disabled = false,
 }) {
   // size of button
   // const tempSize = size ? `[${parseInt(size, 10)}vw]` : "full";
-  // console.log(tempSize);
 
   // styling and classnames
   const classNames = {
     container: `
-    ${color ? `bg-[${color}]` : "bg-primary"} 
+    ${color ? `bg-[${color}]` : 'bg-primary'} 
     w-11/12  self-center my-2 rounded-xl items-center
-   ${!image && "justify-center  py-4"} flex-row  
-   ${type === "inverted" ? "bg-gray-200" : ""}
-    ${type === "outline" ? "bg-white border-primary border-[1.5px]" : ""}
+   ${!image && 'justify-center  py-4'} flex-row  
+   ${type === 'inverted' ? 'bg-gray-200' : ''}
+    ${type === 'outline' ? 'bg-white border-primary border-[1.5px]' : ''}
+    ${disabled === true ? 'bg-white border-primary border-[1.5px]' : ''}
     ${externalButtonStyle}`,
 
     defaultButtonText: `text-xl text-white leading-relaxed font-displayMedium 
-    ${type === "inverted" ? "text-black" : ""}
-    ${type === "outline" ? "text-primary" : ""}
+    ${type === 'inverted' ? 'text-black' : ''}
+    ${type === 'outline' ? 'text-primary' : ''}
+    ${disabled === true ? 'text-primary' : ''}
     ${externalTextstyle}`,
 
-    defaultButtonBG: `  ${image ? "ml-[10px]" : ""}
+    defaultButtonBG: `  ${image ? 'ml-[10px]' : ''}
    `,
   };
 
   return (
-    <TouchableOpacity className={classNames.container} onPress={onPress}>
+    <TouchableOpacity
+      disabled={disabled}
+      className={classNames.container}
+      onPress={onPress}>
       {image && (
         <Image
           source={image}

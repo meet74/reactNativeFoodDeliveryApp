@@ -1,15 +1,16 @@
 // All imports
-import React from "react";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import React from 'react';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import {
-  FORGOTPASSWORD,
+  EMAILVERIFICATIONPAGE,
+  FORGOTPASSWORDSCREEN,
   INITIALPAGE,
-  LOGIN,
+  LOGINSCREEN,
   OTPLOGINSCREEN,
   OTPVERIFICATIONSCREEN,
-  SIGNUP,
-} from "../componentsAndNames";
+  SIGNUPSCREEN,
+} from '../componentsAndNames';
 
 const AuthNavigator = createNativeStackNavigator();
 
@@ -21,11 +22,21 @@ function AuthNavigation() {
         name={INITIALPAGE.name}
         component={INITIALPAGE.component}
       />
-      <AuthNavigator.Screen name={LOGIN.name} component={LOGIN.component} />
-      <AuthNavigator.Screen name={SIGNUP.name} component={SIGNUP.component} />
       <AuthNavigator.Screen
-        name={FORGOTPASSWORD.name}
-        component={FORGOTPASSWORD.component}
+        name={LOGINSCREEN.name}
+        component={LOGINSCREEN.component}
+      />
+      <AuthNavigator.Screen
+        name={SIGNUPSCREEN.name}
+        component={SIGNUPSCREEN.component}
+      />
+      <AuthNavigator.Screen
+        name={FORGOTPASSWORDSCREEN.name}
+        component={FORGOTPASSWORDSCREEN.component}
+      />
+      <AuthNavigator.Screen
+        name={EMAILVERIFICATIONPAGE.name}
+        component={EMAILVERIFICATIONPAGE.component}
       />
       <AuthNavigator.Screen
         name={OTPLOGINSCREEN.name}
