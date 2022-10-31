@@ -1,4 +1,4 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
+/* eslint-disable arrow-body-style */
 import { FORGOTPASSWORD, LOGIN, LOGOUT, SET_TOKEN, SIGNUP } from '../constant';
 
 export const signupUser = (email = null, password = null) => {
@@ -33,8 +33,7 @@ export const forgotPassword = (email = null) => {
   return null;
 };
 
-export const logOut = async () => {
-  await AsyncStorage.setItem('token', null);
+export const logOut = () => {
   return {
     type: LOGOUT,
   };

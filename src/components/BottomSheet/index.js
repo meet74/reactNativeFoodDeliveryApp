@@ -1,23 +1,30 @@
 /* eslint-disable react-native/no-color-literals */
 /* eslint-disable react/destructuring-assignment */
-import React from "react";
-import { Text, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
-import BottomSheet from "react-native-raw-bottom-sheet";
-import Entypo from "react-native-vector-icons/Entypo";
+import React from 'react';
+import {
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  ScrollView,
+  View,
+} from 'react-native';
+import BottomSheet from 'react-native-raw-bottom-sheet';
+import Entypo from 'react-native-vector-icons/Entypo';
 
-import Button from "../Button";
+import Button from '../Button';
+import TopMenu from '../TopMenu';
 
 const internalStyle = StyleSheet.create({
   icon: {
-    alignSelf: "flex-end",
+    alignSelf: 'flex-end',
     right: 0,
     top: 0,
   },
   wrapper: {
-    backgroundColor: "rgba(0,0,0,0.5)",
+    backgroundColor: 'rgba(0,0,0,0.5)',
   },
   draggableIcon: {
-    backgroundColor: "#000",
+    backgroundColor: '#000',
   },
   sheetContainer: {
     borderTopLeftRadius: 10,
@@ -35,10 +42,10 @@ function Sheet(props) {
   };
 
   const className = {
-    container: "grow m-5",
-    titleText: "text-black text-xl ",
+    container: 'grow m-5',
+    titleText: 'text-black text-xl ',
     extraButtonStyle:
-      "items-center self-center justify-center flex-1 mb-10 mt-5 bg-gray",
+      'items-center self-center justify-center flex-1 mb-10 mt-5 bg-gray',
   };
   return (
     <BottomSheet
@@ -50,18 +57,23 @@ function Sheet(props) {
         wrapper: internalStyle.wrapper,
         draggableIcon: internalStyle.draggableIcon,
         container: internalStyle.sheetContainer,
-      }}
-    >
-      <ScrollView className={className.container} scrollEnabled>
-        <TouchableOpacity onPress={() => submitHandler()}>
-          <Entypo
-            name="cross"
-            size={24}
-            color="gray"
-            style={internalStyle.icon}
-          />
-        </TouchableOpacity>
-        {props.title !== "" ? (
+      }}>
+      <ScrollView
+        keyboardShouldPersistTaps="always"
+        className={className.container}
+        scrollEnabled>
+        <View className="flex-row justify-between items-center">
+          <TopMenu title="Enter new Address" showRightIcon={false} />
+          <TouchableOpacity onPress={() => submitHandler()}>
+            <Entypo
+              name="cross"
+              size={24}
+              color="gray"
+              style={internalStyle.icon}
+            />
+          </TouchableOpacity>
+        </View>
+        {props.title !== '' ? (
           <Text className={className.titleText}>{props.title}</Text>
         ) : null}
         {props.children}

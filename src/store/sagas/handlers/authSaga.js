@@ -7,6 +7,8 @@ import {
   SIGNUP,
   SET_SIGNUP_DATA,
   AUTH_API_URL,
+  LOGOUT,
+  SET_LOGOUT_DATA,
 } from '../../constant';
 
 function* signupRequest(action) {
@@ -82,6 +84,13 @@ function* loginRequest(action) {
   }
 }
 
+function* logoutRequest() {
+  yield AsyncStorage.removeItem('token');
+  yield put({
+    type: SET_LOGOUT_DATA,
+  });
+}
+
 function* forgotPasswordRequest(action) {
   const params = {
     email: action.email,
@@ -118,6 +127,7 @@ function* AuthSaga() {
   yield takeEvery(SIGNUP, signupRequest);
   yield takeEvery(LOGIN, loginRequest);
   yield takeEvery(FORGOTPASSWORD, forgotPasswordRequest);
+  yield takeEvery(LOGOUT, logoutRequest);
 }
 
 export default AuthSaga;

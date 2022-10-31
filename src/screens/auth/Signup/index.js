@@ -39,6 +39,7 @@ function SignUpScreen({ navigation }) {
   useEffect(() => {
     if (data.status === 200 && data.id) {
       setError(data.status);
+
       dispatch(setProfileData(data.id));
       navigation.replace(LOGINSCREEN.name);
     } else {

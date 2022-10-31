@@ -10,7 +10,7 @@ import {
   Pressable,
   ActivityIndicator,
 } from 'react-native';
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useDispatch, useSelector } from 'react-redux';
 import Button from '../../../components/Button';
@@ -23,6 +23,7 @@ import {
   TABSCREENS,
 } from '../../../navigation/componentsAndNames';
 import { loginUser } from '../../../store/actions/authActions';
+import { getProfileData } from '../../../store/actions/profileActions';
 
 function LoginScreen({ navigation }) {
   // initializing refs using useRef Hook
@@ -36,23 +37,25 @@ function LoginScreen({ navigation }) {
   const [error, setError] = useState(null);
   const [loader, setLoader] = useState(false);
 
-  const data = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
 
-  const stateChange = useCallback(() => {
-    if (data.status === 200 && data.id) {
+  const data = useSelector((state) => state.auth);
+  console.log('token', data);
+  const stateChange = () => {
+    if (data.status === 200 && data.token) {
+      console.log('calling');
+      dispatch(getProfileData(data.token));
       navigation.replace(TABSCREENS.name);
       setError(data.status);
     } else {
       console.log('Error');
       setError(data.status);
     }
-  }, [data.id]);
+  };
 
   useEffect(() => {
     stateChange();
   }, [data]);
-
-  const dispatch = useDispatch();
 
   const submitHandler = () => {
     setLoader(true);

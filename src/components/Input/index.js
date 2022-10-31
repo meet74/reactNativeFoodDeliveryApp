@@ -3,7 +3,6 @@
 // All imports
 import React, { useState } from 'react';
 import { TextInput, View, Text } from 'react-native';
-// import Entypo from 'react-native-vector-icons/Entypo';
 
 function Input({
   label = '',
@@ -19,13 +18,14 @@ function Input({
   externalInputStyle,
   externalLabelFocusedStyle,
   externalInputFieldStyle,
+  icon,
 }) {
   // initializing state using useState Hook
   const [focused, setFocus] = useState(false);
 
   // styling and classnames
   const classNames = {
-    inputContainer: `h-[60px] ml-[24px] m-1 ${externalInputStyle}`,
+    inputContainer: `h-[60px] w-[250px] ml-[24px] m-1 ${externalInputStyle}   `,
     inputLabelFocused:
       focused || value
         ? `relative top-6 left-4 z-10 text-sm ${externalLabelFocusedStyle}`
@@ -37,9 +37,7 @@ function Input({
   };
   return (
     <View className={classNames.inputField}>
-      {/* <View className="m-1 mt-3">
-        <Entypo name="location-pin" size={28} color="black" />
-      </View> */}
+      {icon && <View className="m-1 mt-4">{icon}</View>}
       <View>
         <Text className={classNames.inputLabelFocused}>
           {focused || value ? label || placeholder : ''}

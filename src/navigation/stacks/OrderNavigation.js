@@ -1,7 +1,7 @@
 // All imports
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { ORDERSCREEN } from '../componentsAndNames';
+import { CARTSCREEN, ORDERDETAIL, ORDERSCREEN } from '../componentsAndNames';
 
 const OrderNavigator = createNativeStackNavigator();
 
@@ -12,6 +12,14 @@ function OrderNavigation() {
       <OrderNavigator.Screen
         name={ORDERSCREEN.name}
         component={ORDERSCREEN.component}
+      />
+      <OrderNavigator.Screen
+        name={ORDERDETAIL.name}
+        component={ORDERDETAIL.component}
+      />
+      <OrderNavigator.Screen
+        name={CARTSCREEN.name}
+        component={CARTSCREEN.component}
       />
     </OrderNavigator.Navigator>
   );

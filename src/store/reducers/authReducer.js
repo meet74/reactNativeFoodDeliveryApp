@@ -4,8 +4,8 @@ import {
   SET_SIGNUP_DATA,
   SET_LOGIN_DATA,
   SET_FORGOTPASSWORD_DATA,
-  LOGOUT,
   SET_TOKEN,
+  SET_LOGOUT_DATA,
 } from '../constant';
 
 const initialState = {
@@ -43,7 +43,7 @@ export default (state = initialState, action) => {
         phoneNumber: state.phoneNumber,
         status: action.status,
       };
-    case LOGOUT:
+    case SET_LOGOUT_DATA:
       return {
         id: null,
         email: null,

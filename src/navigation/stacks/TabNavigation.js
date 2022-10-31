@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {
   HOMESCREEN,
-  ORDERSCREEN,
+  ORDER,
   PROFILESCREEN,
   SEARCHSCREEN,
 } from '../componentsAndNames';
@@ -19,6 +19,7 @@ function TabNavigation() {
   return (
     <TabNavigator.Navigator
       screenOptions={({ route }) => ({
+        tabBarHideOnKeyboard: true,
         headerShown: false,
         tabBarShowLabel: false,
         tabBarIcon: ({ focused }) => {
@@ -27,7 +28,7 @@ function TabNavigation() {
             iconName = focused ? 'home-sharp' : 'home-outline';
           } else if (route.name === SEARCHSCREEN.name) {
             iconName = focused ? 'search-sharp' : 'search-outline';
-          } else if (route.name === ORDERSCREEN.name) {
+          } else if (route.name === ORDER.name) {
             iconName = focused ? 'list-circle' : 'list-circle-outline';
           } else if (route.name === PROFILESCREEN.name) {
             iconName = focused ? 'person-circle' : 'person-circle-outline';
@@ -51,10 +52,7 @@ function TabNavigation() {
         name={SEARCHSCREEN.name}
         component={SEARCHSCREEN.component}
       />
-      <TabNavigator.Screen
-        name={ORDERSCREEN.name}
-        component={ORDERSCREEN.component}
-      />
+      <TabNavigator.Screen name={ORDER.name} component={ORDER.component} />
       <TabNavigator.Screen
         name={PROFILESCREEN.name}
         component={PROFILESCREEN.component}
