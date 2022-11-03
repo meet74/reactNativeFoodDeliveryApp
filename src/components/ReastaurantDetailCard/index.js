@@ -26,6 +26,7 @@ function RestaurantDetailCard({
 
   useEffect(() => {
     const dishData = cartData.cart.find((cart) => cart.id === dish.id);
+
     if (dishData) {
       setCounter(dishData.quantity);
     } else {
@@ -35,9 +36,11 @@ function RestaurantDetailCard({
   }, [cartData]);
 
   const handleCounter = (value, type) => {
+    console.log(value, 'cart state-1');
     if (value >= 1) {
       setCounter(value);
       if (type === 'add') {
+        console.log(counter + 1, 'cart state');
         dispatch(
           addToCart({
             category_id: dish.category_id,

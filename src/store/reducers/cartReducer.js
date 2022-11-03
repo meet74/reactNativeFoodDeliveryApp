@@ -23,16 +23,15 @@ export default (state = initialState, action) => {
       const dishItem = allCartData.find(
         (cart) => cart.restaurant_id === action.restaurant_id
       );
-      console.log(dishItem);
+      console.log(dishItem, 'this is item');
       if (dishItem) {
-        console.log(dishItem.id);
-        console.log(action.id);
-
+        console.log('dishitem true');
         const dishIndex = allCartData.findIndex(
-          (cart) => cart.id === action.restaurant_id
+          (cart) => cart.id === action.id
         );
-        console.log(dishIndex);
-        if (dishIndex) {
+        console.log('this is index', allCartData);
+        if (dishIndex !== -1) {
+          console.log('dishIndex true');
           allCartData[dishIndex] = {
             categpry_id: action.categpry_id,
             description: action.description,
@@ -46,6 +45,7 @@ export default (state = initialState, action) => {
             quantity: parseInt(allCartData[dishIndex].quantity, 10) + 1,
           };
         } else {
+          console.log('dishIndex false');
           allCartData.push({
             categpry_id: action.categpry_id,
             description: action.description,
@@ -62,6 +62,7 @@ export default (state = initialState, action) => {
         cartItems += 1;
         cartTotal += action.price;
       } else if (allCartData.length !== 0) {
+        console.log('(allCartData.length !== 0 true');
         allCartData.splice(0, allCartData.length);
         allCartData.push({
           categpry_id: action.categpry_id,
@@ -78,6 +79,7 @@ export default (state = initialState, action) => {
         cartItems = 1;
         cartTotal = action.price;
       } else {
+        console.log('(dishitem false');
         allCartData.push({
           categpry_id: action.categpry_id,
           description: action.description,

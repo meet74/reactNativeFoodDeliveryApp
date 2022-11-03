@@ -363,7 +363,7 @@ function HomeScreen({ navigation }) {
                 externalButtonStyle="mt-12"
               />
             )}
-            {userData.userAddresses.length > 0 && (
+            {userData.userAddresses.length >= 0 && (
               <Button
                 title="Open my Address"
                 onPress={() => {
